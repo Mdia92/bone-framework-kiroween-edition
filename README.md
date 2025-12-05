@@ -316,14 +316,3 @@ License
 This project is licensed under the MIT License.
 See the LICENSE
  file for details.
-
-
-You can:
-
-1. Open `README.md` on GitHub (pencil icon).
-2. Delete everything.
-3. Paste this entire block.
-4. Commit changes.
-
-That will wipe any “Google AI Studio” footer and give you a clean, judge-ready README.
-::contentReference[oaicite:0]{index=0}
