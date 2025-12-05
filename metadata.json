@@ -1,0 +1,5 @@
+{
+  "name": "Bone Framework: Kiroween Edition",
+  "description": "A monorepo-style framework for generating Standard Operating Procedures (SOPs) using AI, featuring Incident Exorcist and Onboarding Ritual applications.",
+  "requestFramePermissions": []
+}

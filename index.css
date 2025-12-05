@@ -1,0 +1,482 @@
+/* Bone Framework: Kiroween Edition - Custom Animations */
+
+@keyframes float-up {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(0) scale(0.8);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-200px) scale(1.2);
+  }
+}
+
+/* Hero Title Glitch Animation */
+@keyframes glitch-flicker {
+  0%, 90%, 100% {
+    opacity: 1;
+    text-shadow: 
+      0 0 20px rgba(139, 69, 255, 0.8),
+      0 0 40px rgba(139, 69, 255, 0.5),
+      2px 2px 0 rgba(255, 0, 255, 0.3),
+      -2px -2px 0 rgba(0, 255, 255, 0.3);
+  }
+  92%, 94%, 96% {
+    opacity: 0.8;
+    text-shadow: 
+      0 0 30px rgba(139, 69, 255, 1),
+      0 0 60px rgba(139, 69, 255, 0.7),
+      3px 0 0 rgba(255, 0, 255, 0.5),
+      -3px 0 0 rgba(0, 255, 255, 0.5);
+    transform: translate(2px, 0);
+  }
+}
+
+.hero-title-glitch {
+  animation: glitch-flicker 8s ease-in-out infinite;
+}
+
+/* Skull Pattern Drift Animation */
+@keyframes skull-drift {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, -10px);
+  }
+  50% {
+    transform: translate(-5px, 5px);
+  }
+  75% {
+    transform: translate(5px, 10px);
+  }
+}
+
+.skull-pattern-animated {
+  animation: skull-drift 30s ease-in-out infinite;
+}
+
+/* Fire Flicker Animation for Incident Card */
+@keyframes fire-flicker {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1) drop-shadow(0 0 5px rgba(255, 77, 77, 0.5));
+  }
+  25% {
+    transform: scale(1.1) rotate(-5deg);
+    filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 77, 77, 0.8));
+  }
+  50% {
+    transform: scale(0.95) rotate(5deg);
+    filter: brightness(0.9) drop-shadow(0 0 8px rgba(255, 77, 77, 0.6));
+  }
+  75% {
+    transform: scale(1.05) rotate(-3deg);
+    filter: brightness(1.1) drop-shadow(0 0 12px rgba(255, 77, 77, 0.7));
+  }
+}
+
+.fire-flicker {
+  display: inline-block;
+  animation: fire-flicker 2s ease-in-out infinite;
+}
+
+/* Skull Float Animation for Onboarding Card */
+@keyframes skull-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-8px) rotate(5deg);
+    opacity: 0.8;
+  }
+}
+
+.skull-float {
+  display: inline-block;
+  animation: skull-float 3s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    box-shadow: 0 0 20px rgba(255, 77, 77, 0.3);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 40px rgba(255, 77, 77, 0.6);
+  }
+}
+
+.animate-float-up {
+  animation: float-up 2s ease-out forwards;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Smooth fade-in for content */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+/* Summoning circle pulse */
+@keyframes circle-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.animate-circle-pulse {
+  animation: circle-pulse 2s ease-in-out infinite;
+}
+
+/* Halloween Landing Page Styles */
+
+/* Dark gradient background with skull pattern */
+.halloween-bg {
+  background: linear-gradient(135deg, #1a0b2e 0%, #0a0a0a 50%, #0d0208 100%);
+  position: relative;
+}
+
+.halloween-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(139, 69, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(88, 28, 135, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Skull pattern background */
+.skull-pattern {
+  position: fixed;
+  inset: 0;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='60' cy='50' r='25'/%3E%3Cellipse cx='52' cy='48' rx='6' ry='8' fill='%23000000'/%3E%3Cellipse cx='68' cy='48' rx='6' ry='8' fill='%23000000'/%3E%3Cpath d='M 56 56 L 60 60 L 64 56 Z' fill='%23000000'/%3E%3Cpath d='M 45 68 Q 48 72 52 74 L 52 78 L 56 78 L 56 74 L 64 74 L 64 78 L 68 78 L 68 74 Q 72 72 75 68' stroke='%23ffffff' stroke-width='2' fill='none'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 120px 120px;
+  will-change: transform;
+}
+
+/* Hero Glassmorphism Card */
+.hero-glass-card {
+  background: rgba(15, 15, 25, 0.5);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(139, 69, 255, 0.2);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
+    0 0 80px 0 rgba(139, 69, 255, 0.15),
+    0 0 120px 0 rgba(88, 28, 135, 0.1);
+}
+
+/* Glassmorphism panel */
+.glass-panel {
+  background: rgba(15, 15, 20, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 69, 255, 0.15);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.05),
+    0 0 60px 0 rgba(139, 69, 255, 0.08);
+}
+
+.glass-panel-subtle {
+  background: rgba(20, 20, 25, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(139, 69, 255, 0.1);
+  box-shadow: 
+    0 4px 16px 0 rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.03);
+}
+
+
+/* Halloween Button Styles */
+
+.halloween-btn {
+  position: relative;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Bone Glow Effect on Hover */
+.halloween-btn-exorcist:hover {
+  box-shadow: 
+    0 0 20px rgba(239, 68, 68, 0.6),
+    0 0 40px rgba(239, 68, 68, 0.4),
+    0 0 60px rgba(239, 68, 68, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.halloween-btn-ritual:hover {
+  box-shadow: 
+    0 0 20px rgba(13, 148, 136, 0.6),
+    0 0 40px rgba(13, 148, 136, 0.4),
+    0 0 60px rgba(13, 148, 136, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Hover Skull Icon */
+.hover-skull {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 2rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 5;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
+
+.halloween-btn:hover .hover-skull {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.15;
+}
+
+/* Skeleton Hand Ripple Effect */
+.skeleton-ripple {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+  transform: translate(-50%, -50%);
+  animation: skeleton-ripple-anim 0.6s ease-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes skeleton-ripple-anim {
+  0% {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}
+
+/* Skull Particle Burst */
+.skull-particle {
+  position: absolute;
+  font-size: 1rem;
+  transform: translate(-50%, -50%);
+  animation: skull-burst 1s ease-out forwards;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes skull-burst {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.5) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(-30px) scale(1) rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-60px) scale(0.3) rotate(360deg);
+  }
+}
+
+/* Scale-up animation on hover */
+.halloween-btn:not(:disabled):hover {
+  transform: scale(1.05) translateY(-2px);
+}
+
+.halloween-btn:not(:disabled):active {
+  transform: scale(0.95);
+}
+
+/* Pulsing glow for loading state */
+.halloween-btn:disabled {
+  animation: pulse-glow-btn 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow-btn {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(139, 69, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(139, 69, 255, 0.6);
+  }
+}
+
+/* Floating Embers Animation for Incident Exorcist */
+@keyframes ember-rise {
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100px) translateX(50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.ember {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.3;
+  animation: ember-rise linear infinite;
+}
+
+.ember-1 {
+  left: 10%;
+  animation-duration: 15s;
+  animation-delay: 0s;
+}
+
+.ember-2 {
+  left: 30%;
+  animation-duration: 18s;
+  animation-delay: 3s;
+}
+
+.ember-3 {
+  left: 60%;
+  animation-duration: 20s;
+  animation-delay: 6s;
+}
+
+.ember-4 {
+  left: 80%;
+  animation-duration: 22s;
+  animation-delay: 2s;
+}
+
+.ember-5 {
+  left: 45%;
+  animation-duration: 17s;
+  animation-delay: 8s;
+}
+
+/* Floating Mystical Elements for Onboarding Ritual */
+@keyframes mystical-drift {
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(50vh) translateX(30px) rotate(180deg) scale(1);
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) translateX(-20px) rotate(360deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.mystical-float {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.4;
+  animation: mystical-drift ease-in-out infinite;
+}
+
+.mystical-1 {
+  left: 15%;
+  animation-duration: 20s;
+  animation-delay: 0s;
+}
+
+.mystical-2 {
+  left: 35%;
+  animation-duration: 25s;
+  animation-delay: 5s;
+}
+
+.mystical-3 {
+  left: 55%;
+  animation-duration: 22s;
+  animation-delay: 10s;
+}
+
+.mystical-4 {
+  left: 75%;
+  animation-duration: 28s;
+  animation-delay: 3s;
+}
+
+.mystical-5 {
+  left: 90%;
+  animation-duration: 24s;
+  animation-delay: 12s;
+}
+
+/* Pulsing Glow for Active Elements */
+@keyframes pulse-glow-halloween {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(139, 69, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(139, 69, 255, 0.6), 0 0 40px rgba(139, 69, 255, 0.3);
+  }
+}
+
+/* Spooky Text Shadow for Headers */
+.spooky-text {
+  text-shadow: 
+    0 0 10px rgba(139, 69, 255, 0.5),
+    0 0 20px rgba(139, 69, 255, 0.3),
+    2px 2px 4px rgba(0, 0, 0, 0.5);
+}

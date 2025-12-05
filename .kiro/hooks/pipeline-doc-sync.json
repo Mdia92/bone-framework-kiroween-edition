@@ -1,0 +1,12 @@
+{
+  "name": "Pipeline Documentation Sync",
+  "description": "Automatically updates ARCHITECTURE.md when the core pipeline changes to keep docs in sync with code",
+  "trigger": {
+    "type": "onFileSave",
+    "filePattern": "packages/bone-framework/core/pipeline.ts"
+  },
+  "action": {
+    "type": "sendMessage",
+    "message": "The core pipeline file has been updated. Please:\n\n1. Re-read packages/shared/types.ts to check for any schema changes\n2. Re-read packages/bone-framework/core/pipeline.ts to understand the latest pipeline implementation\n3. Update docs/ARCHITECTURE.md to reflect:\n   - Current SOP schema structure from types.ts\n   - Current pipeline stages and their implementations\n   - Any new methods, validation logic, or data flow changes\n   - Keep the existing structure but ensure technical accuracy\n\nFocus on keeping the \"Pipeline Components\" and \"Universal SOP Schema\" sections accurate and current."
+  }
+}
